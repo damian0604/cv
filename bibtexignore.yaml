@@ -1,0 +1,5 @@
+!config
+identifier: bibtexignore
+name: BibTeX (ignoring errors)
+command: ./bibtexignore.sh @{file}
+arguments: []

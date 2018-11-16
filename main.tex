@@ -1,18 +1,8 @@
-% arara: lmkclean
-% arara: clean: { files: [art.bbl, art.aux, thes.bbl, thes.aux, conf.bbl, conf.aux, textbook.bbl, textbook.aux., chapter.bbl, chapter.aux, review.bbl, review.aux, misc.bbl, misc.aux] }
-% arara: pdflatex:  { action: nonstopmode }
-% arara: bibtex: { files: [ art,thes,conf,textbook,chapter,review,misc ] }
-% arara: pdflatex:  { action: nonstopmode }
-% arara: pdflatex: { action: nonstopmode }
-
 \documentclass[11pt,a4paper,sans]{moderncv} 
 \moderncvstyle{banking}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 \usepackage[utf8]{inputenc}
 \usepackage[scale=0.75]{geometry}
-%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
-%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to f\textsc{}orce the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
-
 
 % make subsecion headings larger (anders vallen ze weg in de literatuurlist
 \renewcommand*{\subsectionfont}{\Large\mdseries\upshape}
@@ -22,6 +12,11 @@
 \usepackage{lastpage}
 \rfoot{\addressfont\itshape\textcolor{gray}{\thepage/\pageref{LastPage}}}
 %\rfoot{\addressfont\itshape\textcolor{gray}{Page \thepage\ of \pageref{LastPage}}}
+
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+
 
 
 
@@ -36,20 +31,6 @@
 \social[github]{damian0604}      
 %\extrainfo{additional information}       
 %\photo[64pt][0.4pt]{bestandsnaam}
-
-
-% zie https://tex.stackexchange.com/questions/161897/moderncv-newline-within-a-cventry-in-the-banking-style
-% maakt multi-line cventry mogelijk
-% of 13cm de juiste keuze is moet nog blijken
-\renewcommand*{\cventry}[7][.25em]{
-	\begin{tabular*}{\textwidth}{p{13cm}@{\extracolsep{\fill}}r}%
-		{\bfseries #4} & {\bfseries #5} \\%
-		{\itshape #3\ifthenelse{\equal{#6}{}}{}{, #6}} & {\itshape #2}\\%
-	\end{tabular*}%
-	\ifx&#7&%
-	\else{\\\vbox{\small#7}}\fi%
-	\par\addvspace{#1}}
-
 
 
 % to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
@@ -82,6 +63,8 @@
 
 \makecvtitle
 
+
+%\section{Personal details}
 \cventry{6-4-1983}{Born in Menden, Germany}{}{Menden, DE}{}{}
 
 \section{Work experience}
@@ -92,26 +75,26 @@
 
 
 \cventry{2012--2014}{Lecturer (docent)}{Universiteit van Amsterdam}{Amsterdam, NL}{}{%Teaching bachelor and master courses on
-	%political communication as well as methods courses at the Department of Communication Science.%\newline{}%
-	\begin{itemize}
-		\item Acquired the Dutch Basic Teaching Qualification (Basiskwalificatie Onderwijs) -- 7-10-2013
-		\item Received 0.2 FTE research time grant for further qualification --  9/2013
-	\end{itemize}
+%political communication as well as methods courses at the Department of Communication Science.%\newline{}%
+\begin{itemize}
+    \item Acquired the Dutch Basic Teaching Qualification (Basiskwalificatie Onderwijs) -- 7-10-2013
+    \item Received 0.2 FTE research time grant for further qualification --  9/2013
+\end{itemize}
 }
 
 \cventry{2009--2012}{PhD Candidate}{Universiteit van Amsterdam}{Amsterdam, NL}{}{
-	\begin{itemize}
-		\item Full-time employee as PhD candidate at the Amsterdam School of Communication Research
-		\item Teaching and thesis supervision
-	\end{itemize}
+\begin{itemize}
+\item Full-time employee as PhD candidate at the Amsterdam School of Communication Research
+\item Teaching and thesis supervision
+\end{itemize}
 }
 
 
 
 \cventry{2007--2009}{Student assistant}{Westf\"alische Wilhelms-Universit\"at}{M\"unster, DE}{}{
-	\begin{itemize}
-		\item Conducting quantitative and qualitative content analyses as student research assistant at the Department of Communication Science
-	\end{itemize}
+\begin{itemize}
+\item Conducting quantitative and qualitative content analyses as student research assistant at the Department of Communication Science
+\end{itemize}
 }
 
 
@@ -121,19 +104,21 @@
 %\cventry{2005--2009}{Job title}{smart media solutions, Menden, Germany}{City}{}{Description}
 
 
+
+
 \section{Education}
 \cventry{2009--2013}{Doctoral degree (Dr.)}{Universiteit van Amsterdam}{Amsterdam, NL}{}{\begin{itemize}
-		\item Degree in Communication Science, defended at the Faculty of Social and Behavioural Sciences, with a thesis titled ``Following the News. Patterns of Online and Offline News Consumption''. In the Netherlands, the German distinction between summa cum laude, magna cum laude, cum laude, and rite does not exist. 
-	\end{itemize}
+\item Degree in Communication Science, defended at the Faculty of Social and Behavioural Sciences, with a thesis titled ``Following the News. Patterns of Online and Offline News Consumption''. In the Netherlands, the German distinction between summa cum laude, magna cum laude, cum laude, and rite does not exist. 
+\end{itemize}
 }
 
 \cventry{2006--2007}{Erasmus exchange}{Vrije Universiteit}{Amsterdam, NL}{}{}
 
 \cventry{2003--2009}{Magister degree (M.A.) }{Westf\"alische Wilhems-Universit\"at}{M\"unster, DE}{}{
-	\begin{itemize}
-		\item Degree in Communication Science, minors in Dutch Studies and German Philology (grade: 1.11)
-		\item Thesis on ``New Papers for New Readers? Concepts, Profiles and Programs of the Dutch Papers nrc.next, De Pers and DAG'' (grade: 1.0)
-	\end{itemize}
+\begin{itemize}
+\item Degree in Communication Science, minors in Dutch Studies and German Philology (grade: 1.11)
+\item Thesis on ``New Papers for New Readers? Concepts, Profiles and Programs of the Dutch Papers nrc.next, De Pers and DAG'' (grade: 1.0)
+\end{itemize}
 }
 
 %\section{Master thesis}
@@ -158,7 +143,7 @@
 
 \cvitem{Statistical software}{R, STATA, SPSS, Amos}
 \cvitem{Programming in Python}{data retrieval, text analysis and
-	natural language processing}
+natural language processing}
 \cvitem{Databases}{MySQL, MongoDB, ElasticSearch}
 \cvitem{Markup languages}{LaTeX, HTML, CSS, XML}
 \cvitem{System administration}{Linux, cloud computing, virtual machines}
@@ -284,9 +269,7 @@ Communication, First Monday;
 ICA, ECREA, WAPOR, Etmaal van de Communicatiewetenschap.
 
 \emph{Also reviewing for several funding agencies, including the Czech
-	Science Foundation and the Flemish Science Foundation.} \newline
-
-
+Science Foundation and the Flemish Science Foundation.} \newline
 
 
 
@@ -294,76 +277,86 @@ ICA, ECREA, WAPOR, Etmaal van de Communicatiewetenschap.
 
 \section{Teaching}
 %\cvitemwithcomment{bla}{natirrerjerje}{Comment}
-\cvitem{Big Data and Automated Content Analysis}{Research Master methods course. Co-teaching every academic year since 2013/2014, in semester 2.}
+%\cvitemwithcomment{bla, Dutch}{nerejerjjiency}{Comment}
+%\cvitemwithcomment{Frenchblan}{Breueruruls}{Comment}
+
+
+
+
+
+
+
+\cvitem{Big Data and Automated Content Analysis}{Research Master methods course. Taught every academic year since 2013/2014, in semester 2.}
 
 \cvitem{Innovating Journalism}{Master course on data journalism. Co-teaching with Penny Sheets in academic year 2018/19, semester 1.}
 
-\cvitem{Journalistic Product}{Practical course to turn Master's thesis into a journalistic product. Co-teaching in academic year 2016/17, semester 2, and academic year 2017/18, semester 2.}
+\cvitem{Journalistic Product}{Practical course to turn Master's thesis into a journalistic product. Taught in academic year 2016/17, semester 2, and academic year 2017/18, semester 2.}
 
 \cvitem{Media Ethics}{MOOC (Massive Open Online Course). Developed with Rutger de Graaf, Elgin Blankwater, Annemarie van Oosten, Sandra Jacobs, Lotte Salome. Continously available online.}
 
-\cvitem{Introduction to Research Methods}{Seminar group in the pre-master program. Co-teaching in academic year 2014/15, semester 1.}
+\cvitem{Introduction to Research Methods}{Seminar group in the pre-master program. Taught in academic year 2014/15, semester 1.}
 
 \cvitem{Hot topics in political communication}{Bachelor graduation project (Afstudeerproject). Co-teaching with Linda Bos in academic year 2014/15, semester 1.}
 
-\cvitem{Graduation project Excellence track (Afstudeerproject Excellentietraject)}{Bachelor graduation project for excellent students. Co-teaching in academic year 2013/14, semester 2 and academic year 2014/15, semester 2.}
+\cvitem{Graduation project Excellence track (Afstudeerproject Excellentietraject)}{Bachelor graduation project for excellent students. Taught in academic year 2013/14, semester 2 and academic year 2014/15, semester 2.}
 
 \cvitem{Citizens and Public Opinion}{Master specialization seminar. Co-teaching with Anouk van Drunen and Regula H\"anglli in academic year 2012/13, semester 2.}
 
 \cvitem{Journalism and the Media}{Master specialization seminar. Co-teaching with Richard van der Wurff in academic year 2012/13, semester 1.}
 
-\cvitem{New Media, New Politics?}{Master elective. Co-teaching in academic year 2012/13, semester 1 and academic year 2012/13, semester 2.}
+\cvitem{New Media, New Politics?}{Master elective. Taught in academic year 2012/13, semester 1 and academic year 2012/13, semester 2.}
 
 \cvitem{Domain Module Political Communication and Journalism}{Bachelor seminar groups (Werkgroepen Domeinmodule politieke communicatie en journalistiek). Two groups taught in academic year 2012/13, semester 1; two groups taught in academic year 2015/16, semester 1.}
 
 \cvitem{Dead Trees and Digital Citizens: News and Journalism in an Online Era}{Bachelor graduation seminar (Afstudeerseminar Dode bomen en digitale burgers: Nieuws en journalistiek in het online tijdperk). Co-teaching with Tom Bakker in academic year 2011/12, semester 2; taught as graduation project (afstudeerproject) in academic year 2012/13, semester 2 and academic year 2013/14, semester 1.}
 
-\cvitem{Introduction to Communication Science} {Bachelor seminar group (Werkgroep Inleiding Communicatiewetenschap). Co-teaching in academic year 2010/11, semester 1.}
+\cvitem{Introduction to Communication Science} {Bachelor seminar group (Werkgroep Inleiding Communicatiewetenschap). Taught in academic year 2010/11, semester 1.}
 
 
 \section{Invited talks and workshops (selection)}
 
-\cventry{9-2017}{Four-day workshop Automated Content Analysis with Python}{Universiteit Antwerpen}{}{}{}
+\cventry{9-2017}{Four-day workshop Automated Content Analysis with Python}{Universiteit Antwerpen, BE}{}{}{}
 
-\cventry{14-9-2017}{Invited speaker at Workshop Medien in Konflikten.}{Schader-Forum, Darmstadt.}{}{}{}
+\cventry{14-9-2017}{Invited speaker at Workshop Medien in Konflikten.}{Schader-Forum, Darmstadt, DE}{}{}{}
 
-\cventry{5-2017}{Two-day workshop Automated Content Analysis with Python}{Radboud Universiteit, Nijmegen}{}{}{}
+\cventry{5-2017}{Two-day workshop Automated Content Analysis with Python}{Radboud Universiteit, Nijmegen, NL}{}{}{}
 
-\cventry{10-4-2017}{Invited presentation:``Filter bubbles are overrated''}{Vrije Universiteit, Amsterdam.}{}{}{}
+\cventry{10-4-2017}{Invited presentation:``Filter bubbles are overrated''}{Vrije Universiteit, Amsterdam, NL}{}{}{}
 
-\cventry{27-3-2017}{Participant in a panel discussion on filter bubbles and algorithmic news selection}{Pakhuis de Zwijger, ``Sign of Time'' series, Amsterdam}{}{}{}
+\cventry{27-3-2017}{Participant in a panel discussion on filter bubbles and algorithmic news selection}{Pakhuis de Zwijger, ``Sign of Time'' series, Amsterdam, NL}{}{}{}
 
 \cventry{2/2017}{Two-day workshop Automated Content Analysis with Python}{Amsterdam Institute for Social Science Research, Universiteit van Amsterdam}{}{}{}
 
 \cventry{12-5-2016}{Session at PhD training workshop: ''Data analysis in the digital age''
-%”Qualitative research methods in the digital era: How
+%��”Qualitative research methods in the digital era: How
 %interviews have been re-shaped by technology?
 }{Geneva,
-Switzerland}{}{}{} 
+CH}{}{}{} 
  
-\cventry{4-2016}{Invited participant at expert workshop ``Analysis, Interpretation and Benefit of  \emph{User-Generated Data: Computer Science Meets Communication Studies''}}{Schloss Dagstuhl, Germany}{}{}{}
+\cventry{4-2016}{Invited participant at expert workshop ``Analysis, Interpretation and Benefit of\\  \emph{User-Generated Data: Computer Science Meets Communication Studies''}}{Schloss Dagstuhl, DE}{}{}{}
 
 \cventry{1-3-2016}{Invited talk: ``Inductive automated frame analysis''
 %.  at “Expert meeting on automatic text analysis”,
 }{Utrecht School of Governance, Utrecht
-University}{}{}{}
+University, NL}{}{}{}
  
- \cventry{24-2-2016}{Invited talk: ``Setting up an infrastructure for large-scale automated content analysis''}{Computational Social Science Meetup, Freie Universität Berlin}{}{}{}
+ \cventry{24-2-2016}{Invited talk: ``Setting up an infrastructure for large-scale automated content analysis''}{Computational Social Science Meetup, Freie Universität Berlin, DE}{}{}{}
 
 \cventry{8-12-2015}{Guest lecture: ``Big Data \& network analysis'' %department of Political Science at RU Nijmegen
-}{Radboud Universiteit, Nijmegen}{}{}{}
+}{Radboud Universiteit, Nijmegen, NL}{}{}{}
 
-\cventry{1-12-2015}{Invited talk at pre-symposium workshop: \emph{``From word frequencies to topic modeling: Applying automated content analysis}  \emph{techniques to short social media messages''}  }{GESIS Computational Social Science Winter Symposium, Cologne}{}{}{}
+\cventry{1-12-2015}{Invited talk at pre-symposium workshop:\\ \emph{``From word frequencies to topic modeling: Applying automated content analysis}\\  \emph{techniques to short social media messages''}  }{GESIS Computational Social Science Winter Symposium, Cologne, DE}{}{}{}
 
-\cventry{27-11-2015}{Invited lecture: ``Packing and unpacking the bag of words: Introducing a toolkit for inductive automated frame analysis.''}{IdeaLabsSymposium, ``Social media: incubators of a renewed news media landscape?'', KU Leuven, Belgium}{}{}{}
+\cventry{27-11-2015}{Invited lecture: ``Packing and unpacking the bag of words: Introducing a toolkit\\  \emph{for inductive automated frame analysis.''} }{IdeaLabsSymposium, %“Social media: incubators of a renewed news media landscape?”
+KU Leuven, BE}{}{}{}
 
-\cventry{22-9-2015}{Invited talk: ``Meer dan sentimentscores: Inzichten destilleren uit een enorme hoeveelheid data''}{Nederlandstalig Platform voor Surveyonderzoek (NPSO), Amsterdam}{}{}{}
+ \cventry{22-9-2015}{Invited talk: ``Meer dan sentimentscores: Inzichten destilleren uit een enorme\\ \emph{hoeveelheid data''}}{Nederlandstalig Platform voor Surveyonderzoek (NPSO), Amsterdam, NL}{}{}{}
 
-\cventry{8-10-2014 }{Workshop ``Python in the Social Sciences''}{Utrecht Data School, Utrecht University}{}{}{}
+\cventry{8-10-2014 }{Workshop ``Python in the Social Sciences''}{Utrecht Data School, Utrecht University, NL}{}{}{}
 
-\cventry{5-3-2014}{Workshop ``Python in the Social Sciences''}{Coding Culture, Utrecht}{}{}{}
+\cventry{5-3-2014}{Workshop ``Python in the Social Sciences''}{Coding Culture, Utrecht, NL}{}{}{}
 
-\cventry{3-2014}{Hands-on-Workshop Analyzing Big (Twitter) Data.}{Department of Communication Science, Universiteit van Amsterdam}{}{}{}
+\cventry{3-2014}{Hands-on-workshop ``Analyzing Big (Twitter) Data''}{Department of Communication Science, Universiteit van Amsterdam, NL}{}{}{}
  
 
 
@@ -392,6 +385,11 @@ University}{}{}{}
 \subsection{Manuscripts under review}
 
 \makeatletter
+
+% als we als nummering 1. ipv [1] willen
+%\renewcommand\@biblabel[1]{#1.}
+
+
 \long\def\thebibliography#1{%
   %\section*{\refname}%
   %\@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}
@@ -553,7 +551,7 @@ University}{}{}{}
 \makeatother
 
 
-\bibliographystylechapter{unsrtdindamian}   %ofunsrtdin dan krijg je o.a. ook doi 
+\bibliographystylechapter{unsrtdindamian}   %ofunsrtdindamian dan krijg je o.a. ook doi 
 \bibliographychapter{bookchapters}                  
 
 
