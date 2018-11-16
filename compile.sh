@@ -9,4 +9,5 @@ do
 done
 #pdflatex -interaction=nonstopmode cv.tex
 pdflatex cv.tex
+pdflatex cv.tex
 
