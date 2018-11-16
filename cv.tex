@@ -50,6 +50,20 @@
 %\photo[64pt][0.4pt]{bestandsnaam}
 
 
+
+% zie https://tex.stackexchange.com/questions/161897/moderncv-newline-within-a-cventry-in-the-banking-style
+% maakt multi-line cventry mogelijk
+% of 13cm de juiste keuze is moet nog blijken
+\renewcommand*{\cventry}[7][.25em]{
+	\begin{tabular*}{\textwidth}{p{13cm}@{\extracolsep{\fill}}r}%
+		{\bfseries #4} & {\bfseries #5} \\%
+		{\itshape #3\ifthenelse{\equal{#6}{}}{}{, #6}} & {\itshape #2}\\%
+	\end{tabular*}%
+	\ifx&#7&%
+	\else{\\\vbox{\small#7}}\fi%
+        \par\addvspace{#1}}
+
+        
 % to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
 %\makeatletter
 %\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
@@ -350,7 +364,7 @@ Science Foundation and the Flemish Science Foundation.} \newline
 }{Geneva,
 CH}{}{}{} 
  
-\cventry{4-2016}{Invited participant at expert workshop ``Analysis, Interpretation and Benefit of\\  \emph{User-Generated Data: Computer Science Meets Communication Studies''}}{Schloss Dagstuhl, DE}{}{}{}
+\cventry{4-2016}{Invited participant at expert workshop ``Analysis, Interpretation and Benefit of User-Generated Data: Computer Science Meets Communication Studies''}{Schloss Dagstuhl, DE}{}{}{}
 
 \cventry{1-3-2016}{Invited talk: ``Inductive automated frame analysis''
 %.  at “Expert meeting on automatic text analysis”,
@@ -362,12 +376,12 @@ University, NL}{}{}{}
 \cventry{8-12-2015}{Guest lecture: ``Big Data \& network analysis'' %department of Political Science at RU Nijmegen
 }{Radboud Universiteit, Nijmegen, NL}{}{}{}
 
-\cventry{1-12-2015}{Invited talk at pre-symposium workshop:\\ \emph{``From word frequencies to topic modeling: Applying automated content analysis}\\  \emph{techniques to short social media messages''}  }{GESIS Computational Social Science Winter Symposium, Cologne, DE}{}{}{}
+\cventry{1-12-2015}{Invited talk at pre-symposium workshop: ``From word frequencies to topic modeling: Applying automated content analysis techniques to short social media messages''  }{GESIS Computational Social Science Winter Symposium, Cologne, DE}{}{}{}
 
-\cventry{27-11-2015}{Invited lecture: ``Packing and unpacking the bag of words: Introducing a toolkit\\  \emph{for inductive automated frame analysis.''} }{IdeaLabsSymposium, %“Social media: incubators of a renewed news media landscape?”
+\cventry{27-11-2015}{Invited lecture: ``Packing and unpacking the bag of words: Introducing a toolkit for inductive automated frame analysis.'' }{IdeaLabsSymposium, %“Social media: incubators of a renewed news media landscape?”
 KU Leuven, BE}{}{}{}
 
- \cventry{22-9-2015}{Invited talk: ``Meer dan sentimentscores: Inzichten destilleren uit een enorme\\ \emph{hoeveelheid data''}}{Nederlandstalig Platform voor Surveyonderzoek (NPSO), Amsterdam, NL}{}{}{}
+ \cventry{22-9-2015}{Invited talk: ``Meer dan sentimentscores: Inzichten destilleren uit een enorme hoeveelheid data''}{Nederlandstalig Platform voor Surveyonderzoek (NPSO), Amsterdam, NL}{}{}{}
 
 \cventry{8-10-2014 }{Workshop ``Python in the Social Sciences''}{Utrecht Data School, Utrecht University, NL}{}{}{}
 
@@ -653,3 +667,4 @@ KU Leuven, BE}{}{}{}
 
 
 \end{document}
+
