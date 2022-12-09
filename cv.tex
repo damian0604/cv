@@ -60,7 +60,7 @@
 \usepackage{etaremune}
 % bibliography with mutiple entries
 \usepackage{multibib}
-\newcites{art,proc,thes,conf,textbook,chapter,review,misc}{{Articles},{Papers in Proceedings},{Theses},{Conference Presentations and Posters},{Textbooks},{Book chapters},{Manuscripts under review},{Other publications}}
+\newcites{art,thes,conf,textbook,chapter,review,misc}{{Articles},{Theses},{Conference Presentations and Posters},{Textbooks},{Book chapters},{Manuscripts under review},{Other publications}}
 
 
 
@@ -70,7 +70,6 @@
 % generate all citations now already to avoid messing with the order in case I cite somehwere in the manuscript
 \nocitechapter{*}
 \nociteart{*}
-\nociteproc{*}
 \nocitethes{*}
 \nocitereview{*}
 \nocitetextbook{*}
@@ -552,7 +551,7 @@ KU Leuven, BE}{}{}{}
 
 
 
-\subsection{Peer-reviewed journal articles}
+\subsection{Peer-reviewed journal articles and conference proceedings}
 
 \makeatletter
 \long\def\thebibliography#1{%
@@ -578,35 +577,6 @@ KU Leuven, BE}{}{}{}
 
 \bibliographystyleart{unsrtdindamian}  
 \bibliographyart{articles}   
-
-
-\subsection{Peer-reviewed articles in conference proceedings}
-\emph{In some fields like computer science or computational linguistics, conference proceedings fulfil the role that journals fulfil in social science.}
-
-\makeatletter
-\long\def\thebibliography#1{%
-  %\section*{\refname}%
-  %\@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}
-  \settowidth{\dimen0}{\@biblabel{#1}+5}%  ADD OFFSET (5 in dit geval, gewoon gegokt) zodat het nog steeds goed is uitgelijnd
-  \setlength{\dimen2}{\dimen0}%
-  \addtolength{\dimen2}{\labelsep}
-  \sloppy
-  \clubpenalty 4000 
-  \@clubpenalty 
-  \clubpenalty 
-  \widowpenalty 4000
-  \sfcode `\.\@m
-  \renewcommand{\labelenumi}{\@biblabel{CP \theenumi}} % labels like [3], [2], [1]
-  \begin{etaremune}[labelwidth=\dimen0,leftmargin=\dimen2]\@openbib@code
-}
-\def\endthebibliography{\end{etaremune}}
-\def\@bibitem#1{%
-  \item \if@filesw\immediate\write\@auxout{\string\bibcite{#1}{\the\value{enumi}}}\fi\ignorespaces
-}
-\makeatother
-
-\bibliographystyleproc{unsrtdindamian}  
-\bibliographyproc{proceedings}   
 
 
 
@@ -743,7 +713,7 @@ KU Leuven, BE}{}{}{}
 
 
 
-\subsection{Conference presentations and posters}
+\subsection{Conference presentations and posters (non-archival)}
 
 
 \makeatletter
