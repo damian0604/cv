@@ -1,0 +1,10 @@
+#!/bin/sh
+echo "pre-commit hook will create all.bib with all references concatenated"
+cat *.bib > all
+mv all all.bib
+git add all.bib
+echo "Done!"
+echo "-pre commit will now compile CV and add cv.pdf"
+./compile.sh
+git add cv.pdf
+echo "Done!"
